@@ -1,0 +1,14 @@
+.__boqueador_picker_cursor__,
+.__boqueador_picker_cursor__ * {
+  cursor: crosshair !important;
+}
+
+.__boqueador_highlight__ {
+  position: absolute;
+  z-index: 2147483647;
+  pointer-events: none;
+  background: rgba(255, 64, 64, 0.25);
+  border: 2px solid #ff3030;
+  box-shadow: 0 0 0 2px rgba(255, 48, 48, 0.4);
+  transition: all 60ms ease-out;
+}

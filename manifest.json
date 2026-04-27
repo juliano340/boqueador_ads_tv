@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Boqueador de Elementos",
+  "version": "1.0.0",
+  "description": "Selecione e bloqueie elementos HTML em sites configurados.",
+  "permissions": ["storage", "scripting", "activeTab", "contextMenus"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Boqueador"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["picker.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "commands": {
+    "start-picker": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+B"
+      },
+      "description": "Iniciar seleção de elemento para bloquear"
+    }
+  }
+}
