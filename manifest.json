@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Boqueador de Elementos",
-  "version": "1.0.0",
-  "description": "Selecione e bloqueie elementos HTML em sites configurados.",
+  "version": "1.1.0",
+  "description": "Selecione e bloqueie ou pinte elementos HTML de preto em sites configurados.",
   "permissions": ["storage", "scripting", "activeTab", "contextMenus"],
   "host_permissions": ["<all_urls>"],
   "background": {
@@ -27,7 +27,16 @@
       "suggested_key": {
         "default": "Ctrl+Shift+B"
       },
-      "description": "Iniciar seleção de elemento para bloquear"
+      "description": "Iniciar seleção de elemento para ocultar"
+    },
+    "start-paint": {
+      "suggested_key": {
+        "default": "Alt+Shift+P"
+      },
+      "description": "Iniciar seleção de elemento para pintar de preto"
+    },
+    "start-paint-deep": {
+      "description": "Pintar elemento selecionado e seus internos de preto"
     }
   }
 }

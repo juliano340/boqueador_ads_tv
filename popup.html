@@ -4,12 +4,14 @@
   <meta charset="utf-8" />
   <title>Boqueador</title>
   <style>
-    body { font-family: system-ui, sans-serif; width: 320px; margin: 0; padding: 12px; }
+    body { font-family: system-ui, sans-serif; width: 340px; margin: 0; padding: 12px; }
     h1 { font-size: 14px; margin: 0 0 8px; }
     .host { font-size: 12px; color: #555; word-break: break-all; margin-bottom: 8px; }
     .row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .row.wrap { flex-wrap: wrap; }
     button { padding: 6px 10px; cursor: pointer; border: 1px solid #ccc; background: #f7f7f7; border-radius: 4px; font-size: 12px; }
     button.primary { background: #d33; color: #fff; border-color: #b22; }
+    button.dark { background: #111; color: #fff; border-color: #000; }
     button:hover { filter: brightness(0.95); }
     label { font-size: 12px; }
     input[type=checkbox] { transform: scale(1.1); }
@@ -17,6 +19,8 @@
     li { display: flex; gap: 6px; align-items: center; padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 11px; }
     li code { flex: 1; word-break: break-all; background: #fafafa; padding: 2px 4px; border-radius: 3px; }
     li button { padding: 2px 6px; font-size: 11px; }
+    .tag { flex: 0 0 auto; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: .02em; padding: 2px 4px; border-radius: 3px; background: #eee; color: #555; }
+    .tag.paint { background: #222; color: #fff; }
     .empty { font-size: 12px; color: #888; padding: 8px 0; }
     .footer { margin-top: 10px; text-align: right; }
     .footer a { font-size: 11px; color: #06c; cursor: pointer; }
@@ -30,8 +34,19 @@
     <label for="enabled">Ativar neste site</label>
   </div>
   <div class="row">
-    <button class="primary" id="pick">Selecionar elemento</button>
-    <button id="clear">Limpar todos</button>
+    <input type="checkbox" id="pagedark" />
+    <label for="pagedark">Fundo preto na página inteira</label>
+  </div>
+  <div class="row wrap">
+    <button class="primary" id="pick">Ocultar elemento</button>
+    <button class="dark" id="paint">Pintar de preto</button>
+  </div>
+  <div class="row">
+    <input type="checkbox" id="deep" />
+    <label for="deep">Incluir elementos internos ao pintar</label>
+  </div>
+  <div class="row">
+    <button id="clear">Limpar regras</button>
   </div>
   <ul id="list"></ul>
   <div class="footer"><a id="opts">Configurações avançadas</a></div>

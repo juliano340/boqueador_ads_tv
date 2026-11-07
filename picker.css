@@ -12,3 +12,15 @@
   box-shadow: 0 0 0 2px rgba(255, 48, 48, 0.4);
   transition: all 60ms ease-out;
 }
+
+/* Destaque azul quando o picker está no modo "pintar de preto". */
+.__boqueador_highlight_paint__ {
+  background: rgba(0, 0, 0, 0.35);
+  border-color: #111;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
+}
+
+/* Borda tracejada quando também vai pintar os elementos internos. */
+.__boqueador_highlight_deep__ {
+  border-style: dashed;
+}
